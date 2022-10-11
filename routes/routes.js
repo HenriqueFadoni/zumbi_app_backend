@@ -12,6 +12,11 @@ import {
 	updateLocation,
 	updateInventory,
 } from './updateRoutes.js'
+
+import {
+	makeTrade
+} from './tradeRoute.js'
+
 export default {
 	fetchAllSurvivors,
 	fetchAllAlive,
@@ -22,4 +27,5 @@ export default {
 	createSurvivor,
 	updateLocation,
 	updateInventory,
+	makeTrade
 }

@@ -22,6 +22,8 @@ app.get('/generateReport', routes.generateReport)
 
 // Update Survivor APIs
 app.post('/report/:id', routes.reportSurvivor)
+app.post('/trade', routes.makeTrade)
+
 // Create APIs
 app.post('/survivors', routes.createSurvivor)
 app.post('/updateLocation', routes.updateLocation)
