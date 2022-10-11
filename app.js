@@ -17,6 +17,9 @@ app.use((req, res, next) => {
 app.get('/survivors', routes.fetchAllSurvivors)
 app.get('/survivors/alive', routes.fetchAllAlive)
 app.get('/survivors/:id', routes.fetchSurvivorById)
+app.get('/market', routes.fetchMarket)
+app.get('/generateReport', routes.generateReport)
+
 
 // Basic Connection Check
 app.use((err, req, res, next) => {

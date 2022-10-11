@@ -16,3 +16,16 @@ export async function getSurvivor(id) {
 	const [rows] = await pool.query(query.fetchSurvivorById, [id])
 	return rows[0]
 }
+
+
+export async function getMarket() {
+	const [market] = await pool.query(query.getMarket);
+	return market[0]
+}
+
+export async function generateReport() {
+	const notInfectedList = await getSuvivorsAlive()
+	const [infectedList] = await pool.query(query.generateReport)
+
+	return { notInfectedList, infectedList }
+}

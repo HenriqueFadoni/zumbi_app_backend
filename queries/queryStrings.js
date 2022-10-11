@@ -19,3 +19,14 @@ INNER JOIN last_location ON survivors.id=last_location.id
 INNER JOIN inventory_table ON survivors.id=inventory_table.id
 WHERE survivors.id = ? 
 `
+
+export const getMarket = `
+SELECT * FROM market
+`
+export const generateReport = `
+SELECT *
+FROM survivors
+INNER JOIN inventory_table ON survivors.id=inventory_table.id
+WHERE survivors.infected = true
+`
+
