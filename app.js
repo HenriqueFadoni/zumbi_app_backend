@@ -1,4 +1,5 @@
 import express from 'express'
+import routes from './routes/routes.js'
 
 export const app = express()
 
@@ -12,6 +13,11 @@ app.use((req, res, next) => {
 	next();
 })
  
+// Query Survivor APIs
+app.get('/survivors', routes.fetchAllSurvivors)
+app.get('/survivors/alive', routes.fetchAllAlive)
+app.get('/survivors/:id', routes.fetchSurvivorById)
+
 // Basic Connection Check
 app.use((err, req, res, next) => {
 	console.error(err.stack)
