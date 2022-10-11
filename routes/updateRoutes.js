@@ -1,5 +1,13 @@
 import { methods } from '../queries/queries.js'
 
+// Reports A Survivor
+export const reportSurvivor = async (req, res) => {
+	const id = req.params.id
+	const survivor = await methods.reportSurvivor(id)
+
+	res.status(201).send(survivor)
+}
+
 // Create A New Survivor
 export const createSurvivor = async (req, res) => {
 	const {

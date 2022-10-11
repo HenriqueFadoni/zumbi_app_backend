@@ -40,6 +40,15 @@ INNER JOIN inventory_table ON survivors.id=inventory_table.id
 WHERE survivors.infected = true
 `
 
+// POST STRINGS
+export const reportSurvivor = `
+UPDATE survivors SET survivors.reports = ? WHERE survivors.id = ? 
+`
+
+export const reportInfectedSurvivor = `
+UPDATE survivors SET survivors.reports = ?, survivors.infected = '1' WHERE survivors.id = ? 
+`
+
 export const updateLocation = `
 UPDATE last_location SET last_location.latitude = ?, last_location.longitude = ? WHERE last_location.id = ? 
 `

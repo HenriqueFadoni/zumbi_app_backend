@@ -8,6 +8,7 @@ import {
 	generateReport
 } from './queriesGet.js'
 import {
+	reportSurvivor,
 	updateLocation,
 	updateInventory,
 	createSurvivor,
@@ -23,6 +24,7 @@ export const methods = {
 	getLastLocation,
 	getMarket,
 	generateReport,
+	reportSurvivor,
 	updateLocation,
 	updateInventory,
 	createSurvivor,

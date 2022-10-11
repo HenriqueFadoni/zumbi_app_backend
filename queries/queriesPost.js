@@ -6,6 +6,22 @@ import {
 	getLastLocation,
 	getMarket,
 } from './queriesGet.js'
+
+// Post Queries
+export async function reportSurvivor(id) {
+	let { reports } = await getSurvivor(id);
+	reports += 1;
+	const isInfected = reports >= 3 ? true : false
+
+	if (isInfected) {
+		await pool.query(query.reportInfectedSurvivor, [reports, id])
+		return await getSurvivor(id)
+	} else {
+		await await pool.query(query.reportSurvivor, [reports, id])
+		return await getSurvivor(id)
+	}
+}
+
 export async function updateLocation(id, latitude, longitude) {
 	await pool.query(query.updateLocation, [latitude, longitude, id])
 	return await getLastLocation(id)
