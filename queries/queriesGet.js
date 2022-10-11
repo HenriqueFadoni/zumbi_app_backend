@@ -17,6 +17,15 @@ export async function getSurvivor(id) {
 	return rows[0]
 }
 
+export async function getInventory(id) {
+	const [rows] = await pool.query(query.getInventory, [id])
+	return rows
+}
+
+export async function getLastLocation(id) {
+	const [rows] = await pool.query(query.getLastLocation, [id])
+	return rows
+}
 
 export async function getMarket() {
 	const [market] = await pool.query(query.getMarket);
