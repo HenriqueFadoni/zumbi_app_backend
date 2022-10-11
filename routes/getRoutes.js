@@ -55,10 +55,10 @@ export const generateReport = async (req, res) => {
 	})
 
 	const averageItems = {
-		food: totalItems.food / totalNotInfected,
-		water: totalItems.water / totalNotInfected,
-		medication: totalItems.medication / totalNotInfected,
-		ammunition: totalItems.ammunition / totalNotInfected
+		food: Math.round((totalItems.food / totalNotInfected) * 100/ 100),
+		water:  Math.round((totalItems.water / totalNotInfected) * 100/ 100),
+		medication:  Math.round((totalItems.medication / totalNotInfected) * 100/ 100),
+		ammunition:  Math.round((totalItems.ammunition / totalNotInfected) * 100/ 100)
 	}
 
 	const response = {
