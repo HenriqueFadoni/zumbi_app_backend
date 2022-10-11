@@ -20,6 +20,8 @@ app.get('/survivors/:id', routes.fetchSurvivorById)
 app.get('/market', routes.fetchMarket)
 app.get('/generateReport', routes.generateReport)
 
+// Create APIs
+app.post('/survivors', routes.createSurvivor)
 app.post('/updateLocation', routes.updateLocation)
 app.post('/updateInventory', routes.updateInventory)
 

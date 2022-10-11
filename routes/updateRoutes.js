@@ -1,5 +1,41 @@
 import { methods } from '../queries/queries.js'
 
+// Create A New Survivor
+export const createSurvivor = async (req, res) => {
+	const {
+		first_name,
+		age,
+		reports,
+		gender,
+		inventory,
+		last_location
+	} = req.body
+
+
+	const lastLocationId = await methods.createLastLocation(
+		last_location.latitude,
+		last_location.longitude
+	);
+
+	const inventoryId = await methods.createInventory(
+		inventory.food,
+		inventory.water,
+		inventory.medication,
+		inventory.ammunition,
+	);
+
+	const survivor = await methods.createSurvivor(
+		first_name,
+		age,
+		reports,
+		gender,
+		inventoryId,
+		lastLocationId
+	)
+
+	res.status(201).send(survivor)
+}
+
 // Update Survivor Location
 export const updateLocation = async (req, res) => {
 	const {

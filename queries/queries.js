@@ -10,6 +10,7 @@ import {
 import {
 	updateLocation,
 	updateInventory,
+	createSurvivor,
 	createInventory,
 	createLastLocation
 } from './queriesPost.js'
@@ -21,8 +22,10 @@ export const methods = {
 	getInventory,
 	getLastLocation,
 	getMarket,
+	generateReport,
 	updateLocation,
 	updateInventory,
+	createSurvivor,
 	createInventory,
 	createLastLocation
 }

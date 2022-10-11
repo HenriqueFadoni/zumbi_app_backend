@@ -50,6 +50,11 @@ SET inventory_table.food = ?, inventory_table.water = ?, inventory_table.medicat
 WHERE inventory_table.id = ? 
 `
 
+export const createSurvivor = `
+INSERT INTO survivors (first_name, age, reports, gender, infected, inventory_table_id, last_location_id)
+VALUES (?,?,?,?,?,?,?)
+`
+
 export const createInventory = `
 INSERT INTO inventory_table (food, water, medication, ammunition, totalPoints)
 VALUES (?,?,?,?,?)

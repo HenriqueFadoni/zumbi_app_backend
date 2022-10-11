@@ -16,6 +16,30 @@ export async function updateInventory(id, food, water, medication, ammunition) {
 	return await getInventory(id)
 }
 
+export async function createSurvivor(
+	first_name,
+	age,
+	reports,
+	gender,
+	inventory_table_id,
+	last_location_id
+) {
+	const infected = reports >= 3 ? true : false
+
+	const [result] = await pool.query(query.createSurvivor, [
+		first_name,
+		age,
+		reports,
+		gender,
+		infected,
+		inventory_table_id,
+		last_location_id
+	])
+
+	const id = result.insertId
+	return getSurvivor(id)
+}
+
 export async function createInventory(food, water, medication, ammunition) {
 	const market = await getMarket();
 

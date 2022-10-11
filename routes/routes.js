@@ -7,6 +7,7 @@ import {
 } from './getRoutes.js'
 
 import {
+	createSurvivor,
 	updateLocation,
 	updateInventory,
 } from './updateRoutes.js'
@@ -16,6 +17,7 @@ export default {
 	fetchSurvivorById,
 	fetchMarket,
 	generateReport,
+	createSurvivor,
 	updateLocation,
 	updateInventory,
 }
